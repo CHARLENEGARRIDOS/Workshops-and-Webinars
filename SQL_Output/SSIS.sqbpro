@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:\Users\User\Documents\FINAL\SSIS.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser query pragmas" current="2"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="906"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,7:maincourses"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="courses" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="91"/><column index="2" value="190"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="students" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="3" mode="0"/></sort><column_widths><column index="1" value="78"/><column index="2" value="216"/><column index="3" value="54"/><column index="4" value="76"/><column index="5" value="91"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">SELECT name FROM Students;
+SELECT student_id FROM Students;
+SELECT gender FROM Students;
+SELECT year_level FROM Students;
+SELECT course_code FROM Students;
+SELECT * FROM Students WHERE student_id = '2019-1629';
+SELECT * FROM Students WHERE gender = 'F';
+SELECT * FROM Students WHERE gender = 'M';
+SELECT * FROM Students WHERE year_level = '1ST';
+SELECT * FROM Students WHERE year_level = '2ND';
+SELECT * FROM Students WHERE year_level = '3RD';
+SELECT * FROM Students WHERE year_level = '4TH';
+SELECT * FROM Students WHERE course_code = 'BSSTAT';
+SELECT * FROM Students WHERE course_code = 'BSMATH';
+SELECT * FROM Students WHERE course_code = 'BSCHEM';
+SELECT * FROM Students WHERE course_code = 'BSPHYSICS';
+SELECT * FROM Students WHERE course_code = 'BSIT';
+
+SELECT course_name FROM Courses;
+SELECT course_code FROM Courses;
+SELECT * FROM Courses WHERE course_code = 'BSSTAT';
+SELECT * FROM Courses WHERE course_code = 'BSMATH';
+SELECT * FROM Courses WHERE course_code = 'BSCHEM';
+SELECT * FROM Courses WHERE course_code = 'BSPHYSICS';
+SELECT * FROM Courses WHERE course_code = 'BSIT';
+
+SELECT * FROM Students WHERE course_code = 'BSSTAT' AND year_level = '1ST';
+SELECT * FROM Students WHERE course_code = 'BSSTAT' OR course_code = 'BSCHEM';
+SELECT student_id, name FROM STUDENTS WHERE NOT course_code = 'BSSTAT';
+SELECT * FROM Students WHERE student_id like '%2020%';
+SELECT name FROM Students WHERE name like 'SAL%';
+SELECT name FROM Students WHERE name like '%JOY';
+SELECT student_id, name, course_code FROM Students ORDER BY student_id DESC;
+SELECT * FROM Students JOIN Courses ON (Students.course_code = Courses.course_code);
+
+INSERT INTO Students(student_id, name, gender, year_level) VALUES ('2021-0010', 'COOPER,SHELDON', 'M', '1ST');
+INSERT INTO Students (student_id, name, gender, year_level, course_code) VALUES ('2022-6972', 'CLAVECILLAS, PEARLLYN', 'F', '3RD', 'BSSTAT');
+INSERT INTO Students (student_id, name, gender, year_level, course_code) 
+VALUES ('2021-0020', 'COOPER, MISSY', 'F', '1ST', 'BSCHEM'),
+       ('2020-0001', 'EINSTEIN, ALBERT', 'M', '3RD', 'BSPHYSICS'),
+       ('2021-7078', 'NEWTON, ISAAC', 'M', '4TH', 'BSPHYSICS'),
+	   ('2021-0022', 'ABUBO, CARL JAMES D.', 'M', '4TH', 'BSSTAT');
+
+UPDATE Students SET course_code = 'BSMATH' WHERE ID = 7;
+UPDATE Students SET course_code = 'BSSTAT' WHERE student_id = '2021-1629';
+UPDATE Students SET year_level = '4TH' WHERE student_id = '2021-0010';
+
+DELETE FROM Students WHERE student_id = '2022-0078';
+DELETE FROM Students WHERE course_code = 'BSPHYSICS';
+DELETE FROM Students;
+
+DELETE FROM Courses WHERE course_code = 'BSPHYSICS';
+DELETE FROM Courses;</sql><sql name="SQL 3">INSERT INTO Courses (course_code, course_name)
+VALUES ('BSCE', 'BS in Computer Engineering'),
+	('BSCERE', 'BS in Ceramic Engineering'),
+	('BSMETE', 'BS in Metallurginalc Engineering'),
+	('BSME', 'BS in Mechanical Engineering'),
+	('BSCHE', 'BS in Chemical Engineerng');
+	
+INSERT INTO Students (student_id, name, gender, year_level, course_code) 
+VALUES ('2021-1111', 'COOPER, MISSY', 'F', '1ST', 'BSCE'),
+       ('2020-0212', 'EINSTEIN, ALBERT', 'M', '3RD', 'BSCERE'),
+       ('2021-8000', 'NEWTON, ISAAC', 'M', '4TH', 'BSMETE'),
+	   ('2020-4000', 'VIDAL, CLAIRE', 'F', '2ND', 'BSCHE'),
+	   ('2021-9000', 'ABUBO, CARL JAMES D.', 'M', '4TH', 'BSME');
+		
+SELECT * FROM students WHERE gender = 'F' AND course_code = 'BSCE' OR course_code = 'BSCERE' OR course_code = 'BSMETE' OR course_code = 'BSME' OR course_code = 'BSCHE';
+SELECT * FROM Students WHERE course_code IN ('BSCE','BSCERE','BSMETE','BSME', 'BSCHE') AND gender = 'F';
+SELECT * FROM Students JOIN Courses ON (Students.course_code = Courses.course_code) WHERE course_name like '%Engineering%' AND gender = 'F';
+
+</sql><current_tab id="1"/></tab_sql></sqlb_project>

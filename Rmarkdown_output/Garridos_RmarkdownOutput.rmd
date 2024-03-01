@@ -1,0 +1,95 @@
+---
+title: "Garridos_SampleOutput"
+author: "Charlene Garridos"
+date: "04-12-22"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Problem Set 1
+
+```{r, eval=FALSE}
+You go to the store and buy x bags of carrots and y bananas.  Each bag of carrots costs $1.50 and each banana is $0.25.  You spend $6.50.  The total number of items you purchase is 11. How many bags of carrots did you buy?  How many bananas did you buy? 
+```
+  1. Write an equation with x and y.
+  2. Find the value of the following:
+      a. x
+      b. y
+
+## Solution
+
+Given the information, we have 2 equations. We know each bag of carrots is $1.50 and each banana is $0.25.  We also know the total amount we spend is $6.50.  So, we can write the equation
+
+1.5x+0.25y=6.5
+
+where x is the number of bags of carrots and y is the number of bananas.  
+
+We also know the total number of items we purchased is 11.  We can write the equation as
+
+x+y=11
+
+where x is number of bags of carrots and y is the number of bananas.
+
+To solve, we will solve for one variable in one equation and substitute it into the other equation.  So,
+
+x+y=11
+
+y=11−x
+
+Now, we can substitute the value of y into the first equation.  We get,
+
+1.5x+0.25(11−x)=6.5
+
+We distribute.
+
+1.5x+2.75−0.25x=6.5
+
+We combine like terms.
+
+1.25x+2.75=6.5
+
+We solve for x by getting x alone.  
+
+1.25x+2.75−2.75=6.5−2.75
+
+1.25x=3.75
+
+x=3
+
+Therefore, the number of bags of carrots we bought is 3.  To find the number of bananas, we simply substitute x into the equation.
+
+x+y=11
+
+3+y=11
+
+3+y−3=11−3
+
+y=11−3
+
+y=8
+
+Therefore, the number of bananas we bought is 8.
+
+So we bought 3 bags of carrots and 8 bananas.
+
+
+Reference:
+    https://www.varsitytutors.com/prealgebra-help/word-problems-with-two-unknowns
+
+# Data Visualization
+```{r, echos=TRUE}
+plot(rnorm(150))
+```
+
+## Data Set
+........
+
+# Acknowledgement
+
+I'd want to express gratitude to the speaker, Sir Cuenca, Sir Benitez as well as the facilitators and those who helped make this workshop possible. I sincerely appreciate your time, effort, and passion in educating us. Thank you so much for an excellent and amusing lecture po.
+    

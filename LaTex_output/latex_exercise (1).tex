@@ -1,0 +1,318 @@
+\documentclass[12pt,twoside]{article}
+%--------------------------------------------------------------------
+\usepackage{graphicx,color,fancyhdr,amssymb,amsmath,wasysym}
+%\usepackage{graphtex}
+\usepackage[T1]{fontenc}
+\usepackage[left=1.0in,right=0.75in,top=1.25in,bottom=1.5in]{geometry}
+\geometry{papersize={8.5in,11in}}
+\def\R{\mathbb{R}}
+%--------------------------------------------------------------------
+\newtheorem{exercise}{\bf Exercises}[section]
+\newtheorem{theorem}{\bf Theorem}[section]
+\newtheorem{definition}[theorem]{\bf Definition}
+\newtheorem{example}[theorem]{\bf Example}
+\newtheorem{remark}[theorem]{\bf Remark}
+%--------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LE]{\sffamily \thepage}
+\fancyhead[RE]{\sffamily\leftmark}
+\fancyhead[RO]{\sffamily \thepage}
+\fancyhead[LO]{\sffamily Author's initial}
+\fancyfoot[CO]{\sffamily Math 123}
+\fancyfoot[CE]{\sffamily Polar Coordinate System}
+\renewcommand{\headrulewidth}{0mm}
+%--------------------------------------------------------------------
+\begin{document}
+%--------------------------------------------------------------------
+\title{The Polar Coordinate System\footnote{A topic in Math 123 at the Department of Mathematics and Statistics, MSU-IIT}}
+\author{{\sffamily Firstname M. Lastname}\\
+Department of Mathematics and Statistics\\College of Science and Mathematics\\MSU-Iligan Institute of Technology\\Iligan City 9200, Philippines}
+\date{\today}
+%--------------------------------------------------------------------
+\maketitle
+\tableofcontents
+%--------------------------------------------------------------------
+\begin{abstract}
+In this lecture, we will discuss the two-dimensional coordinates system called polar coordinates. We use some concepts in trigonometry. Some common graphs in the polar coordinates will be introduced. Students are expected to know how to sketch these graphs and solve areas of regions bounded by equations in polar coordinates.
+\end{abstract}
+%--------------------------------------------------------------------
+\section{The Polar Coordinate System}
+
+\subsection{The Rectangular and Polar Coordinate Systems}
+
+Consider a point $A(x,y)\neq(0,0)$ in $\mathbb{R}^2$ and let
+\begin{equation}\label{eqn:complexr}
+r=\sqrt{x^2+y^2}.
+\end{equation}
+Then $r$ is a positive real number. Let $\theta$ be the angle, in counterclockwise direction, formed by the positive $x$-axis and the ray $\overrightarrow{OA}$, where $O(0,0)$ and $A(x,y)$. We note that $r$ can be interpreted as undirected distance between $O$ and $A$. See Figure \ref{fig:complexpolar}.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[page=1]{figure_1.pdf}
+\end{center}
+\vspace{-24pt}
+\caption{Rectangular and Polar Coordinates} 
+\label{fig:complexpolar}
+\end{figure}
+
+From our knowledge of trigonometry, the following equations give a relationship between $x$, $y$, $r$, and $\theta$, where $r\neq 0$ is given in equation (\ref{eqn:complexr}),
+\begin{align*}
+\sin\theta &= \frac{y}{r},\\
+\cos\theta &= \frac{x}{r},\ \text{ and }\\
+\tan\theta &= \frac{y}{x},\ x\neq 0.
+\end{align*}
+Then $(r,\theta)$ is a \textbf{polar coordinates} representation for $A(x,y)$.
+
+\begin{definition}\rm\cite{sm}
+Let $A(x,y)\neq (0,0)$ be any point in $\mathbb{R}$. The \textbf{polar form} of $A$ is given by the coordinates $(r,\theta)$ with
+\begin{align*}
+r &= \sqrt{x^2+y^2},\\
+x &=r\cos\theta,\ \text{ and }\\
+y &= r\sin\theta.
+\end{align*}
+The angle $\theta$ is called an \textbf{argument} of $z$, written $arg(z)=\theta$.
+\end{definition}
+
+A \textbf{polar coordinate system} or \textbf{polar plane} looks like
+
+\begin{center}
+\includegraphics[width=4.5in]{figure_2.pdf}
+\end{center}
+
+The horizontal axis ($x$-axis in the Cartesian plane) is called the {\bf polar-axis}, the vertical axis ($y$-axis in the Cartesian plane) is called the {\bf $\frac{\pi}{2}$-axis}, and the intersection of the polar-axis and the $\frac{\pi}{2}$-axis (the origin in the Cartesian plane) is called the pole.
+
+\begin{example}\rm
+Let $A(-2,2\sqrt{3})$ be a point in $\mathbb{R}^2$ and $(r,\theta)$ be a polar representation of $A$. Then $A(\theta)$ (the {\it terminal point} of $\theta$) is in the 2nd quadrant. Thus,
+$$r=\sqrt{(-2)^2+(2\sqrt{3})^2}=4\ \text{ and }$$
+$$\tan\theta=\frac{y}{x}=\frac{2\sqrt{3}}{-2}=-\sqrt{3}\Rightarrow \theta=\frac{2\pi}{3}.$$
+Therefore, a polar representation of $P$ is $(4,\frac{2\pi}{3})$. Other polar representations of $A$ are $(-4,-\frac{\pi}{3})$, $(4,\frac{8\pi}{3})$, $(-4,-\frac{7\pi}{3})$, etc. \hfill $\blacksquare$
+\end{example}
+
+\subsection{Polar Equations}
+
+In $\mathbb{R}^2$, an equation is express in the variables $x$ and $y$. We called this equation a {\bf cartesian or rectangular equation}. In the polar coordinate system, equations are express in terms of $r$ and $\theta$ and they are called {\bf polar equations}. The following are examples on how to convert cartesian equations to polar equations and vice versa.
+
+\begin{example}\rm
+The cartesian equation
+\begin{align*}
+x^2+y^2&-4x=0\ \Rightarrow\ (x-2)^2+(y-0)^2=4
+\end{align*}
+is a {\bf circle} center at $C(2,0)$ and radius equal to $2$.
+In polar, we have
+\begin{align*}
+r^2-&4r\cos\theta=0\\
+&\Rightarrow r(r-4\cos\theta)=0\\
+&\qquad\Rightarrow r=0\text{ or }r-4\cos\theta=0.
+\end{align*}
+But $r=0$ is just the pole $(0,0)$. Thus, the given cartesian equation has polar equation
+$$r=4\cos\theta.$$
+\end{example}
+
+\begin{example}\rm
+Given a polar equation,
+\begin{align*}
+r^2\cos(2\theta)=10.
+\end{align*}
+In cartesian, we have
+\begin{align*}
+r^2(&\cos^2\theta-\sin^2\theta)=10\\
+&\Rightarrow (r\cos\theta)^2-(r\sin\theta)^2=10\\
+&\quad\Rightarrow x^2-y^2=10.
+\end{align*}
+Hence, the given polar equation is an {\bf hyperbola}.
+\end{example}
+
+\begin{example}\rm
+Given a polar equation,
+\begin{align*}
+r=\frac{4}{3-2\cos\theta}.
+\end{align*}
+In cartesian, we have
+\begin{align*}
+r&(3-2\cos\theta)=4\\
+&\Rightarrow 3r-2r\cos\theta=4\\
+&\quad\Rightarrow (3r)^2=(2r\cos\theta+4)^2\\
+&\qquad\Rightarrow 9r^2=4(r\cos\theta+2)^2\\
+&\quad\qquad\Rightarrow 9(x^2+y^2)=4(x+2)^2\\
+&\Rightarrow 0=5x^2+9y^2-16x-16.
+\end{align*}
+
+Hence, the given polar equation is an {\bf ellipse}.
+\end{example}
+
+%\begin{thebibliography}{2}
+%\bibitem{ll} {\bf Louis Leithold}, The Calculus.
+%\bibitem{pm} {\bf Protter \& Morrey}, College Calculus with Analytic Geometry.
+%\bibitem{js} {\bf James Stewart}, Calculus 5th edition.
+%\bibitem{sm} {\bf Smith \& Minton}, Calculus-Early Transcendental Functions
+%\end{thebibliography}
+
+%\end{document}
+
+
+
+
+
+
+
+\section{Common Graphs in the Polar Coordinate System}
+
+\subsection{Some Polar Graphs}
+
+Some common polar graphs are as follows:
+\begin{enumerate}
+\item {\color{red}\bf Circle}:\quad $r=2a\cos\theta$, $r=2b\sin\theta$
+\begin{itemize}
+\item tangent to the $\frac{\pi}{2}$-axis; $C(a,0)$; radius $|a|$ if $a\neq 0$
+\item tangent to the polar axis; $C(0,b)$; radius $|b|$ if $b\neq 0$
+\end{itemize}
+\item {\color{red}\bf Lima\k{c}on}:\quad $r=a\pm b\cos\theta$, $r=a\pm b\sin\theta$
+\begin{itemize}
+\item $a<b$: Lima\k{c}on with a loop
+\item $a=b$: cardioid (heart-shape)
+\item $a>b$: Lima\k{c}on with a dent
+\end{itemize}
+\item {\color{red}\bf Rose}: \quad $r=a\cos(n\theta)$, $r=a\sin(n\theta)$, where $n\in\mathbb{N}$
+\begin{itemize}
+\item $n$ is odd: $\#$ of petals is $n$ 
+\item $n$ is even: $\#$ of petals is $2n$ 
+\end{itemize}
+\item {\color{red}\bf Lemniscate}: \quad $r^2=a\cos(n\theta)$, $r^2=a\sin(n\theta)$
+\item {\color{red}\bf Spiral of Archimedes}: \quad $r=n\theta$
+\end{enumerate}
+
+\subsection{Symmetry in the Polar Coordinate System}
+
+The following are the rules of Symmetry for graphs of polar equations:
+\begin{enumerate}
+\item {\color{red}\bf Symmetry wrt the polar axis}:\\
+Replace $(r,\theta)$ by either $(r,-\theta+2n\pi)$ or $(-r,\pi-\theta+2n\pi)$.
+\item {\color{red}\bf Symmetry wrt the $\frac{\pi}{2}$ axis}:\\
+Replace $(r,\theta)$ by either $(r,\pi-\theta+2n\pi)$ or $(-r,-\theta+2n\pi)$.
+\item {\color{red}\bf Symmetry wrt the pole}:\\
+Replace $(r,\theta)$ by either $(-r,\theta+2n\pi)$ or $(r,\pi+\theta+2n\pi)$.
+\end{enumerate}
+
+\begin{example}\rm
+Test the following polar equations for symmetry:
+\begin{enumerate}
+\item $r=1+2\sin\theta$ \hfill ans. (swrt $\frac{\pi}{2}$ axis)
+\item $r=3-2\cos\theta$ \hfill ans. (swrt polar axis)
+\item $r=2\sin(2\theta)$ \hfill ans. (swrt pole)
+\end{enumerate}
+\end{example}
+
+
+\section{Area of Regions in Polar Coordinates}
+
+\subsection{Area of a Circular Sector}
+
+Let $R$ be a {\bf circular sector} of a circle given below:
+\begin{center}
+\includegraphics{figure_3.pdf}
+\end{center}
+
+Then the area $A(R)$ of $R$ is given by
+$$A(R)=\tfrac{1}{2}r^2\theta$$
+where
+$r$ is the radius of the circular sector and $\theta$, the {\bf central angle}, is in radian measure.
+
+\subsection{Area of Regions Bounded by Polar Equations}
+
+Let $R$ be the region in the polar plane bounded by $r=f(\theta)$, $\theta=\alpha$, and $\theta=\beta$. See figure below. Consider a partition $\Delta: \alpha=\theta_0<\theta_1<\theta_2<\cdots<\theta_{n-1}<\theta_n=\beta$. For each $i=1,2,\ldots,n$, let $\xi_i\in [\theta_{i-1},\theta_{i}]$ and the central angle is $\Delta_i\theta=\theta_{i}-\theta_{i-1}$.
+
+\begin{center}
+\includegraphics{figure_4.pdf}
+\end{center}
+
+Then the area $A(R_i)$ of the circular sector $R_i$ with central angle $\Delta_i\theta$ and radius equal to $f(\xi_i)$ is given by
+$$A(R_i)=\tfrac{1}{2}\cdot\Big[f(\xi_i)\Big]^2\cdot\Delta_i\theta.$$
+Thus, the approximate area $A(R)$ of $R$ is
+$$\sum_{i=1}^{n}A(R_i)=\sum_{i=1}^{n}\tfrac{1}{2}\cdot\Big[f(\xi_i)\Big]^2\cdot\Delta_i\theta.$$
+If $\|\Delta\|$ is the norm of the partition $\Delta$, then the angle $A(R)$ of the region $R$ is given by
+$$A(R)=\lim_{\|\Delta\|\to0}\sum_{i=1}^{n}\tfrac{1}{2}\cdot\Big[f(\xi_i)\Big]^2\cdot\Delta_i\theta=\tfrac{1}{2}\int_{\alpha}^{\beta}\Big[f(\theta)\Big]^2\ d\theta.$$
+Hence, we have the following theorem:
+
+\begin{theorem}
+Let $R$ be the region in the polar plane bounded 
+by $r=f(\theta)$, $\theta=\alpha$, and $\theta=\beta$, 
+with $\alpha<\beta$. If $f:[\alpha,\beta]\to\mathbb{R}$ 
+is continuous, then the area $A(R)$ of the region $R$
+is given by 
+$$A(R)=\frac{1}{2}\int_{\alpha}^{\beta}\Big[f(\theta)\Big]^2\ d\theta.$$
+\end{theorem}
+
+Let $R$ be the region formed by the two circular sectors (see figure below) where $r_1$ be the radius of the smaller sector, $r_2$ is the radius of the larger sector with $r_1<r_2$, and $\theta$ is the common central angle.
+
+\begin{center}
+\includegraphics{figure_5.pdf}
+\end{center}
+
+Then the area $A(R)$ of $R$ is the area of the larger circular sector less the area of the smaller circular sector, that is,
+$$A(R)=\tfrac{1}{2}(r_2)^2\theta-\tfrac{1}{2}(r_1)^2\theta=\tfrac{1}{2}\Big[(r_2)^2-(r_1)^2\Big]\theta.$$
+%Thus,
+%$$A(R)=\tfrac{1}{2}\Big[(r_2)^2-(r_1)^2\Big]\theta.$$
+In general, let $R$ be a region bounded by $r=f(\theta)$, $r=g(\theta)$, $\theta=\alpha$, and $\theta=\beta$, with $f(\theta)\leq g(\theta)$ (see figure below). 
+
+\begin{center}
+\includegraphics{figure_6.pdf}
+\end{center}
+
+Then the area $A(R)$ of the region $R$ is given by
+\begin{align*}
+A(R)&=\tfrac{1}{2}\lim_{\|\Delta\|\to0} \sum_{i=1}^{n}\Big[g^2(\xi_i)-f^2(\xi_i)\Big]\ \Delta_i\theta=\frac{1}{2}\int_{\alpha}^{\beta}\Big[g^2(\theta)-f^2(\theta)\Big]\ d\theta.
+\end{align*}
+Hence, we have the following theorem:
+
+\begin{theorem}
+Let $R$ be the region in the polar plane bounded by $r=f(\theta)$, $r=g(\theta)$, $\theta=\alpha$, and $\theta=\beta$, with $f(\theta)\leq g(\theta)$ and $\alpha<\beta$. If $f,g:[\alpha,\beta]\to\mathbb{R}$ 
+is continuous, then the area $A(R)$ of the region $R$
+is given by 
+$$A(R)=\frac{1}{2}\int_{\alpha}^{\beta}\Big[g^2(\theta)-f^2(\theta)\Big]\ d\theta.$$
+\end{theorem}
+
+\begin{example}\rm
+Graph the rose $r=4\sin 2\theta$ and find the area of the region enclosed by it.
+\end{example}
+
+\noindent {\sffamily Solution:} The region (shaded gray) is given below:
+
+\begin{center}
+\includegraphics[width=2.5in]{figure_7.pdf} \qquad \includegraphics[width=3.0in]{figure_8.pdf}
+\end{center}
+
+The area enclosed by the rose is $4\cdot A(R_1)$, where $A(R_1)$ is the area of one petal. Therefore,
+\begin{align*}
+A(R) &= 4\cdot A(R_1) = 4\cdot\frac{1}{2}\lim_{\|\Delta\|\to0}\sum_{i=1}^{n}\Big[4\sin(2\xi_i)\Big]^2\ \Delta_i\theta = 2\int_{0}^{\frac{\pi}{2}}\Big[4\sin(2\theta)\Big]^2\ d\theta = 32\int_{0}^{\frac{\pi}{2}}\sin^2(2\theta)\ d\theta\\
+&= 32\int_{0}^{\frac{\pi}{2}}\frac{1-\cos(4\theta)}{2}\ d\theta = 16\int_{0}^{\frac{\pi}{2}}(1-\cos(4\theta))\ d\theta = 16\Big[\theta-\tfrac{1}{4}\sin(4\theta)\Big]\bigg|_{0}^{\frac{\pi}{2}} = 8\pi
+\end{align*}
+
+\begin{example}\rm
+Find the area of the intersection of the regions bounded by the graphs of the lima\k{c}on $r=1+\sin\theta$ and the conic $r=\cos\theta$.
+\end{example}
+
+\noindent {\sffamily Solution:} The region (shaded gray) is given below:
+
+\begin{center}
+\includegraphics[width=3in]{figure_9.pdf}\qquad \includegraphics[width=3in]{figure_10.pdf}
+\end{center}
+
+Let $R_1$ and $R_2$ be the regions as above. Then
+\begin{align*}
+A(R) &= A(R_1)+A(R_2) = \frac{1}{2}\lim_{\|\Delta\|\to0}\sum_{i=1}^{n}(1+\sin\xi_i)^2\ \Delta_i\theta+ \frac{1}{2}\lim_{\|\Delta\|\to0}\sum_{i=1}^{n}(\cos\xi_i)^2\ \Delta_i\theta\\
+&= \frac{1}{2}\int^{0}_{-\frac{\pi}{2}}(1+\sin\theta)^2\ d\theta+ \frac{1}{2}\int_{0}^{\frac{\pi}{2}}(\cos\theta)^2\ d\theta = \frac{1}{2}\int^{0}_{-\frac{\pi}{2}}(1+2\sin\theta+\sin^2\theta)\ d\theta+ \frac{1}{2}\int_{0}^{\frac{\pi}{2}}\cos^2\theta\ d\theta\\
+&= \frac{1}{2}\int^{0}_{-\frac{\pi}{2}}\bigg(1+2\sin\theta+\frac{1-\cos(2\theta)}{2}\bigg)\ d\theta+ \frac{1}{2}\int_{0}^{\frac{\pi}{2}}\frac{1+\cos(2\theta)}{2}\ d\theta\\
+&= \frac{1}{2}\int^{0}_{-\frac{\pi}{2}}\bigg(\frac{3}{2}+2\sin\theta-\frac{1}{2}\cos(2\theta)\bigg)\ d\theta+ \frac{1}{4}\int_{0}^{\frac{\pi}{2}}(1+\cos(2\theta))\ d\theta\\
+&= \frac{1}{2}\bigg(\frac{3}{2}\theta-2\cos\theta-\frac{1}{4}\sin(2\theta)\bigg)\bigg|^{0}_{-\frac{\pi}{2}}+ \frac{1}{4}\bigg(\theta+\frac{1}{2}\sin(2\theta)\bigg)\bigg|_{0}^{\frac{\pi}{2}}\\
+&= \frac{1}{2}\bigg(-2+\frac{3\pi}{4}\bigg)+ \frac{1}{4}\cdot\frac{\pi}{2}=-1+\frac{3\pi}{8}+\frac{\pi}{8}=  \frac{\pi}{2}-1
+\end{align*}
+
+\begin{thebibliography}{2}
+\bibitem{ll} {\bf Louis Leithold}, The Calculus.
+\bibitem{pm} {\bf Protter \& Morrey}, College Calculus with Analytic Geometry.
+\bibitem{js} {\bf James Stewart}, Calculus 5th edition.
+\bibitem{sm} {\bf Smith \& Minton}, Calculus-Early Transcendental Functions
+\end{thebibliography}
+\end{document}
